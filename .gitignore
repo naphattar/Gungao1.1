@@ -1,0 +1,28 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+/node_modules
+/package.json
+/package-lock.json
+# Frontend
+# dependencies
+/clients/node_modules
+/clients/.pnp
+/clients/.pnp.js
+
+# testing
+/clients//coverage
+
+# production
+/clients//build
+
+# misc
+/clients/.DS_Store
+/clients/.env.local
+/clients/.env.development.local
+/clients/.env.test.local
+/clients/.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+

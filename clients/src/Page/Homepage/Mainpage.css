@@ -1,0 +1,81 @@
+.homepagebody{
+    height: 44rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homepagetext{
+    width: 66rem;
+    height: 36rem;
+    display: grid;
+    grid-template-rows : 2fr 1fr;
+}
+
+
+.homepagetext1{
+    width: 62rem;
+    color: #f0aa55;
+    font-size: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.homepagetext2{
+    color: #df8f2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.6rem;   
+}
+
+.selectpagebody{
+    border: solid 1px yellowgreen;
+    width: 60rem;
+    height: 36rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.selectpagebody p{
+    color: #f0aa55;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    margin-bottom: 0rem;
+}
+
+.selectpageformcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid hotpink;
+    height: 32rem;
+    width: 100%;
+}
+
+.selecttopicbutton{
+    height: 3rem;
+    width: 10rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.8rem;
+    background-color: #bf7822;
+}
+
+.selecttopiclink{
+    color: whitesmoke;
+    list-style-type: none;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.selecttopiclink:hover{
+    color: #0D084E;
+    font-weight: bold;
+}

@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Loginbutton from './Loginbutton';
+import "./Navbar.css"
+import Navitem from './Navitem';
 
 
 function Navbar() {
+  const [isLogin,setIslogin] = useState(false);
   return (
-    <div className="Navbar">
-      
-    </div>
+    <nav className="navbar">
+      <p className="navbrand">
+        GUngao
+      </p>
+      <ul className="navlist">
+        <Navitem item={"Home"} tolink={"/"}></Navitem>
+        <Navitem item={"How to use"} tolink={"/howtouse"}></Navitem>
+        <Navitem item={"About us"} tolink={"/aboutus"}></Navitem>
+      </ul>
+      <Loginbutton islogin={isLogin}/>
+    </nav>
   );
 }
 

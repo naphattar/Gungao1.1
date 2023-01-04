@@ -14,7 +14,7 @@ function Loginbutton(isLogin : islogin){
         </button>
         :*/
         <button className="loginbutton">
-            <Link to="/login" className="loginlink">Log-in</Link>
+            <Link to="/login" className="loginlink">Login</Link>
         </button>
     );
 }

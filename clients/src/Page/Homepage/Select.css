@@ -1,0 +1,42 @@
+.select-component {
+    position: relative;
+    background-color: whitesmoke;
+}
+
+.select {
+    display: flex;
+    border: 1px solid #000;
+    padding: 1rem 2rem;
+    width: 30rem;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.select span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: darkblue;
+}
+
+.options {
+    position: absolute;
+    width: 30rem;
+}
+
+.options .option {
+    background: #fff;
+    padding: 1rem 2rem;
+    border: 1px solid #000;
+    width: 100%;
+    border-bottom: none;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.options .option:last-child {
+    border-bottom: 1px solid #000;
+}
+
+.options .option:first-child {
+    border-top: none;
+}

@@ -1,37 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ActionMeta, GroupBase } from 'react-select';
 import { InputActionMeta } from 'react-select/dist/declarations/src';
-import Select from 'react-select/dist/declarations/src/Select';
 import "./Mainpage.css"
+import Select from './Select';
 import Selecttopicbutton from './Selecttopicbutton';
+import { Option } from '../../Interface';
 
-interface Option<
-  Option = unknown,
-  IsMulti extends boolean = false,
-  Group extends GroupBase<Option> = GroupBase<Option>
-  > {
-    value : string;
-    label : string;
+const options: Option[] = [
+  {
+    label: "Movies",
+    value: "movies"
+  },
+  {
+    label: "Game",
+    value: "game"
+  },
+  {
+    label: "Animal",
+    value: "animal"
+  },
+  {
+    label: "Guy2yo",
+    value: "guy2yo"
+  },
+  {
+    label: "Computer",
+    value: "computer"
+  },
+  {
+    label : "Hee",
+    value : "hee"
   }
+];
 
 function Selectpage() {
-  const options: Option[] = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
-  ];
-  
-  const [selectedOption, setSelectedOption] = React.useState<Option | null>(null);
-  
-  const handleChange = (selectedoption: Option | null, actionMeta: ActionMeta<Option>) => {
-    setSelectedOption(selectedOption);
- }
+  const [selectedItem, setSelectedItem] = useState<Option | null>(null);
+
   return (
     <div className="homepagebody">
       <div className="selectpagebody"> 
         <p>Select Your Topic</p>
         <div className="selectpageformcontainer">
-          
+          <Select
+            placeholder="Select topic"
+            selected={selectedItem}
+            options={options}
+            onChange={(selection: Option) => setSelectedItem(selection)}
+          />
+          <h4>You have Selected {selectedItem?.label}</h4>
           <Selecttopicbutton/>
         </div>
       </div>

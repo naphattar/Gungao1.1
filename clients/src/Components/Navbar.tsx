@@ -9,7 +9,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <p className="navbrand">
-        GUngao
+        GUngao1.1
       </p>
       <ul className="navlist">
         <Navitem item={"Home"} tolink={"/"}></Navitem>

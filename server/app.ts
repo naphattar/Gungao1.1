@@ -1,4 +1,4 @@
-import { Register } from "./controller/Authcontroller";
+import { Login, Register } from "./controller/Authcontroller";
 
 const express = require("express");
 const db = require("./database/database");
@@ -9,7 +9,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended : false}));
 
-app.post("/register",Register)
+app.post("/register",Register);
+app.post("/login",Login);
 
 module.exports = app;
 

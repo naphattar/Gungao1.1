@@ -40,4 +40,34 @@ export const Register = async(req : Request , res : Response) : Promise<any> =>{
     }catch(err){
         console.log(err);
     }
-}
+};
+
+export const Login = async(req : Request , res : Response) =>{
+    try{
+        const username : string  = req.body.username;
+        const password : string  = req.body.password;
+        if(!(username && password)){
+            res.status(401).send({message : "Please Enter username and password"});
+            return;
+        }
+        const user : User = await Users.findOne({username});
+        if(user && await bcrypt.compare(password,user.password)){
+            const token = jwt.sign(
+                {
+                    user_id: user._id,
+                    username
+                },
+                process.env.TokenID,{
+                    expiresIn: "2h"
+                }
+            )
+    
+            user.token = token;
+            res.status(201).json(user);
+        }else{
+            res.status(402).send({message : "Invalid Login"});
+        }
+    }catch(err){
+        console.log(err);
+    }
+};

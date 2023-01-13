@@ -42,7 +42,7 @@ export const Register = async(req : Request , res : Response) : Promise<any> =>{
     }
 };
 
-export const Login = async(req : Request , res : Response) =>{
+export const Login = async(req : Request , res : Response) : Promise<any> =>{
     try{
         const username : string  = req.body.username;
         const password : string  = req.body.password;

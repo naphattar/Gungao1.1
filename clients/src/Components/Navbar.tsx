@@ -5,7 +5,6 @@ import Navitem from './Navitem';
 
 
 function Navbar() {
-  const [isLogin,setIslogin] = useState(false);
   return (
     <nav className="navbar">
       <p className="navbrand">
@@ -16,7 +15,7 @@ function Navbar() {
         <Navitem item={"How to use"} tolink={"/howtouse"}></Navitem>
         <Navitem item={"About us"} tolink={"/aboutus"}></Navitem>
       </ul>
-      <Loginbutton islogin={isLogin}/>
+      <Loginbutton/>
     </nav>
   );
 }

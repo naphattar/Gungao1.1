@@ -6,6 +6,11 @@ const Users = require("../model/user");
 
 require("dotenv").config();
 
+// A sub class of Express-request for authorizattion 
+export interface getUserAuthInfoRequest extends Request {
+    user: User // or any other type
+}
+
 export const Register = async(req : Request , res : Response) : Promise<any> =>{
     try{
         const username : string = req.body.username;
@@ -33,9 +38,10 @@ export const Register = async(req : Request , res : Response) : Promise<any> =>{
                 expiresIn: "2h"
             }
         )
-
+        
         newUser.token = token;
-        res.status(201).json(newUser);
+        res.header("x-auth-token", token).status(201).send(newUser);
+        //res.status(201).json(newUser);
 
     }catch(err){
         console.log(err);
@@ -54,20 +60,37 @@ export const Login = async(req : Request , res : Response) : Promise<any> =>{
         if(user && await bcrypt.compare(password,user.password)){
             const token = jwt.sign(
                 {
-                    user_id: user._id,
+                    _id: user._id,
                     username
                 },
-                process.env.TokenID,{
+                process.env.TokenID,
+                {
                     expiresIn: "2h"
                 }
             )
-    
             user.token = token;
-            res.status(201).json(user);
+            res.header("x-auth-token", token).status(201).json(user);
         }else{
             res.status(402).send({message : "Invalid Login"});
         }
     }catch(err){
         console.log(err);
     }
+};
+
+export const verifyToken = (req : getUserAuthInfoRequest , res : Response , next : NextFunction) : any =>{
+    const token = req.headers["x-access-token"];
+    if(!token){
+        return res.status(403).send("Token not found");
+    }
+    try{
+        const decoded = jwt.verify(token,process.env.TokenID);
+        req.user = decoded;
+        next();
+        //res.status(201).send("Authorize Success");
+    }catch(err){
+        console.log(err);
+        res.status(401).send("Invalid Token");
+    }
+    
 };

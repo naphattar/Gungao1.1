@@ -8,32 +8,28 @@ const register = (username : string, password : string) : any=> {
     });
 };
 
-const login = (username : string, password : string): any => {
+const login = (username : string , password : string) : any =>{
     return axios
-      .post(API_URL + "login", {
-        username,
-        password,
-      })
-      .then((response) => {
-        if (response.data.username) {
-          localStorage.setItem("user", JSON.stringify(response.data));
-        }
-        return response.data;
-      });
-  };
-  
-  const logout = () => {
-      localStorage.removeItem("user")
-  };
-  
-  const getCurrentUser = () => {
-    return JSON.parse(localStorage.getItem("user") || "");
-  };
-  
+    .post(API_URL + "login", {
+      username,
+      password,
+    })
+    .then((response) => {
+      console.log(response);
+      /*
+      if (response.data.username) {
+        localStorage.setItem("user", JSON.stringify(response.data));
+      }*/
+      return response.data;
+    });
+}
+const getCurrentUser = () =>{
+    
+}
+
   const AuthService = {
     register,
     login,
-    logout,
     getCurrentUser,
   }
   

@@ -1,18 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import AuthService from "../Services/Authservices";
 
-interface islogin{
-    islogin : boolean;
-}
-
-function Loginbutton(isLogin : islogin){
+function Loginbutton(){
+    const [isLogin,setIsLogin] = useState(false);
     return(
-        /*
-        isLogin ?
-        <button className="loginbutton">
-            <Link to="/" className="loginlink">Log-out</Link>
-        </button>
-        :*/
+        
         <button className="loginbutton">
             <Link to="/login" className="loginlink">Login</Link>
         </button>

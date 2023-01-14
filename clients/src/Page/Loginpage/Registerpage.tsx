@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import "./Loginpage.css"
 import { useNavigate } from "react-router-dom";
+import AuthService from "../../Services/Authservices";
 
 
 function Registerpage(){
@@ -9,6 +10,20 @@ function Registerpage(){
     const [error,setError] = useState(null);
     const errorMessage = error ? error : "Welcome";
     const navigate = useNavigate()
+
+    const handleSubmit = (e : any) => {
+        e.preventDefault();
+            AuthService.register(username,password)
+            .then((response : any) =>{
+                if(response.status === 201){
+                    console.log("Register complete");
+                    navigate("/login");
+                }
+            },(error : any) =>{
+                console.log(error.response.data.message);
+                setError(error.response.data.message);
+            })
+    }
 
     return(
         <div>
@@ -27,7 +42,7 @@ function Registerpage(){
                             placeholder="Password" 
                             onChange = {(event) =>{setPassword(event.target.value)}}></input>
                             <a href='/register'>{errorMessage}</a>
-                            <button >Sign Up</button>
+                            <button onClick={handleSubmit} >Sign Up</button>
                         </form>
                     </div>
                 </div>

@@ -40,8 +40,7 @@ export const Register = async(req : Request , res : Response) : Promise<any> =>{
         )
         
         newUser.token = token;
-        res.header("x-auth-token", token).status(201).send(newUser);
-        //res.status(201).json(newUser);
+        res.header("authtoken", token).status(201);
 
     }catch(err){
         console.log(err);
@@ -69,9 +68,15 @@ export const Login = async(req : Request , res : Response) : Promise<any> =>{
                 }
             )
             user.token = token;
-            res.header("x-auth-token", token).status(201).json(user);
+            res.header("authtoken", token).status(201).send({
+                message : "Login passed",
+                token : user.token,
+                username : user.username
+            });
         }else{
-            res.status(402).send({message : "Invalid Login"});
+            res.status(402).send({
+                message : "Invalid Login",
+            });
         }
     }catch(err){
         console.log(err);
@@ -79,7 +84,7 @@ export const Login = async(req : Request , res : Response) : Promise<any> =>{
 };
 
 export const verifyToken = (req : getUserAuthInfoRequest , res : Response , next : NextFunction) : any =>{
-    const token = req.headers["x-access-token"];
+    const token = req.headers["authtoken"];
     if(!token){
         return res.status(403).send("Token not found");
     }

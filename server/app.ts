@@ -14,6 +14,7 @@ app.use(express.urlencoded({extended : false}));
 const corsOptions = {
     origin: 'http://localhost:3000',
     credentials: true,
+    exposedHeaders: 'x-auth-token',
 };
 
 app.use(cors(corsOptions));
@@ -24,8 +25,10 @@ app.post("/login",Login);
 app.get("/current", verifyToken, async (req : getUserAuthInfoRequest, res : Response)  => {
     let {_id,username} = req.user;
     const user : User = await Users.findOne({ _id: { $eq: _id }});
-    console.log("user is ",user);
-    res.status(201).send(user);
+    res.status(201).send({
+        username : user.username,
+        token : user.token
+    });
 });
 
   

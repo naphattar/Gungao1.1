@@ -5,7 +5,6 @@ import AuthService from "../Services/Authservices";
 function Loginbutton(){
     const [isLogin,setIsLogin] = useState(false);
     return(
-        
         <button className="loginbutton">
             <Link to="/login" className="loginlink">Login</Link>
         </button>

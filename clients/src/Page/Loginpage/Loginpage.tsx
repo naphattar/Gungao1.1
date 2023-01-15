@@ -13,7 +13,11 @@ function Loginpage() {
 
   const handleSubmit = (e : any) =>{
     e.preventDefault();
-    AuthService.login(username,password);
+    AuthService.login(username,password)
+    .then((response : any) =>{
+        AuthService.getCurrentUser();
+    })
+    ;
   }
   return (
     <div className="loginpagebody">    

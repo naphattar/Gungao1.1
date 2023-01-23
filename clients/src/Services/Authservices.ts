@@ -26,8 +26,9 @@ const getCurrentUser = () : any=>{
   .get(API_URL + "current",config)
   .then((response) =>{
     if(response.data.username){
-      localStorage.setItem("user",response.data.username);
+      localStorage.setItem("user",JSON.stringify(response.data));
     }
+    return response.data;
   })
 }
 

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 interface Navlist{
     item : string;
     tolink : string;
-
 }
 function Navitem(list : Navlist){
     return(

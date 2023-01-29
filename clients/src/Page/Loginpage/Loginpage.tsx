@@ -11,13 +11,23 @@ function Loginpage() {
   const errorMessage = error ?  error  : "Don't have an account? ";
 
 
-  const handleSubmit = (e : any) =>{
+  const handleSubmit = async (e : any) =>{
     e.preventDefault();
     AuthService.login(username,password)
-    .then((response : any) =>{
-        AuthService.getCurrentUser();
-    })
-    ;
+    .then(async (response : any) =>{
+            await AuthService.getCurrentUser();
+            console.log("Login completed");
+            navigate("/");
+    },(error : any) => {
+      const resMessage =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+        setError(error.response.data);
+    });
+    window.location.reload();
   }
   return (
     <div className="loginpagebody">    

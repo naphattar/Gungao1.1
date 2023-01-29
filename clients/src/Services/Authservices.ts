@@ -18,6 +18,7 @@ const login = (username : string , password : string) : any =>{
     .then((response) => {
       if(response.data.token){
         localStorage.setItem("jwt",response.data.token);
+        localStorage.setItem("user",JSON.stringify({"username" : response.data.username}));
       }
     });
 }

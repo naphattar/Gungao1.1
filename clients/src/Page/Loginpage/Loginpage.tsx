@@ -8,16 +8,13 @@ function Loginpage() {
   const [password,setPassword] = useState("");
   const [error,setError] = useState(null);
   const navigate = useNavigate();
-  const errorMessage = error ?  error  : "Don't have an account? ";
-
-
   const handleSubmit = async (e : any) =>{
     e.preventDefault();
     AuthService.login(username,password)
-    .then(async (response : any) =>{
-            await AuthService.getCurrentUser();
-            console.log("Login completed");
-            navigate("/");
+    .then((response : any) =>{
+        console.log("Login completed");
+        navigate("/");
+        window.location.reload();
     },(error : any) => {
       const resMessage =
         (error.response &&
@@ -27,8 +24,9 @@ function Loginpage() {
         error.toString();
         setError(error.response.data);
     });
-    window.location.reload();
+    
   }
+  const errorMessage = error ?  error  : "Don't have an account? ";
   return (
     <div className="loginpagebody">    
         <div className="loginformcontainer">

@@ -4,7 +4,6 @@ import Navbar from './Components/Navbar';
 import Mainpage from './Page/Homepage/Mainpage';
 import Loginpage from './Page/Loginpage/Loginpage';
 import Registerpage from './Page/Loginpage/Registerpage';
-
 function App() {
   return (
     <div className="App">

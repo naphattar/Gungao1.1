@@ -40,10 +40,8 @@ function Chatmain(){
     const getChatdata = async() =>{
         const roomid = getRoomID();
         if(roomid > 0){
-            const username = await getUsername();
-            if(username !== ""){
-                socket.emit("join_room", roomid);
-            }
+            await getUsername();
+            socket.emit("join_room", roomid);
         }
     };
 

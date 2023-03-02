@@ -18,6 +18,7 @@ function Chat(chatpropslist : Chatprops ) {
 
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState<Messagedata[]>([]);
+  
   const socket = chatpropslist.socket;
 
   const sendMessage = async () => {

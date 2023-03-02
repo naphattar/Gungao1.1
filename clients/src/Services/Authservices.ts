@@ -25,8 +25,6 @@ const getCurrentUser = () : any=>{
   return axios
   .get(API_URL + "current",config)
   .then((response) =>{
-      if(response.data.username){
-      }
       return response.data;
   })
 }

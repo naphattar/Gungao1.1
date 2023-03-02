@@ -41,13 +41,16 @@ function Chat(chatpropslist : Chatprops ) {
   };
 
   useEffect(() : any => {
+    console.log(chatpropslist.socket);
     console.log(chatpropslist.username);
     console.log(chatpropslist.roomid);
     socket.on("recieve_message", (data) => {
-      setMessageList(
-        (list) => [...list, data]
-        // added new message to the messagelist
-      );
+      if(data.room === chatpropslist.roomid){
+        setMessageList(
+          (list) => [...list, data]
+          // added new message to the messagelist
+          );
+      }
     });
 
     return () => socket.off("recieve_message");

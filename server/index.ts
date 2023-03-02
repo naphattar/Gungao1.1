@@ -20,13 +20,14 @@ const socketio = new Server (server, {
 
 socketio.on("connection",(socket: { [x: string]: any; join(room: any): unknown; id: any; on: (arg0: string, arg1: (p : any)  => void) => void;} ) =>{
     console.log(`${socket.id} user just connected`);
-    
+
     socket.on("join_room" , (room: Number) =>{
         socket.join(room);
         console.log(`User id: ${socket.id} join the room id ${room}`);
     });
     
     socket.on("send_message" ,(data: Messagedata) =>{
+        console.log(data);
         socket.to(data.room).emit("recieve_message" , data);
     });
     socket.on("disconnect",()=>{

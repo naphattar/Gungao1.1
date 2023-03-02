@@ -18,7 +18,6 @@ const login = (username : string , password : string) : any =>{
     .then((response) => {
       if(response.data.token){
         localStorage.setItem("jwt",response.data.token);
-        //localStorage.setItem("user",JSON.stringify({"username" : response.data.username}));
       }
     });
 }
@@ -27,7 +26,6 @@ const getCurrentUser = () : any=>{
   .get(API_URL + "current",config)
   .then((response) =>{
       if(response.data.username){
-        //localStorage.setItem("user",JSON.stringify(response.data));
       }
       return response.data;
   })
@@ -35,8 +33,6 @@ const getCurrentUser = () : any=>{
 
 const logout = () =>{
   localStorage.removeItem("jwt");
-  //localStorage.removeItem("user");
-  
 }
 
   const AuthService = {

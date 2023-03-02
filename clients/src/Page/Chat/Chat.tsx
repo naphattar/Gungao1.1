@@ -40,6 +40,8 @@ function Chat(chatpropslist : Chatprops ) {
   };
 
   useEffect(() : any => {
+    console.log(chatpropslist.username);
+    console.log(chatpropslist.roomid);
     socket.on("recieve_message", (data) => {
       setMessageList(
         (list) => [...list, data]
@@ -83,7 +85,6 @@ function Chat(chatpropslist : Chatprops ) {
           placeholder="Send Something"
           onChange={(event) => {
             setCurrentMessage(event.target.value);
-            
           }}
           onKeyPress={(event) => {
             event.key === "Enter" && sendMessage();

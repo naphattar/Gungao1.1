@@ -18,6 +18,7 @@ function Registerpage(){
                 if(response.status === 201){
                     console.log("Register complete");
                     navigate("/login");
+                    window.location.reload();
                 }
             },(error : any) =>{
                 console.log(error.response.data.message);

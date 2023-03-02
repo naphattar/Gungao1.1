@@ -15,32 +15,56 @@ function Chatmain(){
     const navigate = useNavigate();
 
     let {roomID} = useParams();
-
-    const getUsername = () =>{
-        AuthService.getCurrentUser()
-        .then((currentUser : any) =>{
-          setUsername(currentUser.username);
-          console.log(username);
-        })
-        .catch((err : any) =>{
-          console.log(err.response.data);
-          navigate("/error");
-        })
-    };
-
-    useEffect(() =>{
+    
+    const getRoomID = () : Number  =>{
         if(roomID){
             const roomidNum = parseInt(roomID.trim());
             setRoomid(roomidNum);
+            return roomidNum;
         }
-        getUsername();
+        return 0;
+    };
+
+    const getUsername = async()  =>{
+        AuthService.getCurrentUser()
+        .then((currentUser : any) =>{
+            setUsername(currentUser.username);
+            return currentUser.username;
+        })
+        .catch((err : any) =>{
+            console.log(err.response.data);
+            navigate("/error");
+        });
+        return "";
+    }
+    const getChatdata = async() =>{
+        const roomid = getRoomID();
+        if(roomid > 0){
+            const username = await getUsername();
+            if(username !== ""){
+                socket.emit("join_room", roomid);
+            }
+        }
+    };
+
+
+    useEffect(() =>{
+        getChatdata()
     },[])
     
-    return(
+    
+    if(username !== "" && roomid์ > 0){
+        return(
         <div className="chatmain">
             <Chat socket={socket} username={username} roomid={roomid์}/>
         </div>
-    );
+        );
+    }
+    return(
+        <div className="Loadingpage">
+            <p>Loading ... </p>
+        </div>
+    )
 }
 
 export default Chatmain;

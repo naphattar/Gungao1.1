@@ -8,7 +8,7 @@ require("dotenv").config();
 
 // A sub class of Express-request for authorizattion 
 export interface getUserAuthInfoRequest extends Request {
-    user: User // or any other type
+    user: User;
 }
 
 export const Register = async(req : Request , res : Response) : Promise<any> =>{

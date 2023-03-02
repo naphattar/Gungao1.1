@@ -1,5 +1,4 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes} from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Chatmain from './Page/Chat/Chatmain';
 import Mainpage from './Page/Homepage/Mainpage';
@@ -14,7 +13,9 @@ function App() {
         <Route path="/" element={<Mainpage/>}></Route>
         <Route path="/login" element={<Loginpage/>}></Route>
         <Route path="/register" element={<Registerpage/>}></Route>
-        <Route path="/chat" element = {<Chatmain/>}></Route>
+        <Route path="/chat">
+          <Route path=":roomID" element={<Chatmain/>}></Route>
+        </Route>
       </Routes>
     </div>
   );

@@ -6,16 +6,14 @@ import Navitem from './Navitem';
 import { User } from '../Interface';
 function Navbar() {
   const [isLogin,setIslogin] = useState(false);
-  const [currentUser,setCurrentUser] = useState(null);
+
   useEffect(()=>{
     AuthService.getCurrentUser()
     .then((currentUser : any) =>{
-      setCurrentUser(currentUser);
       setIslogin(true);
     })
     .catch((err : any) =>{
       console.log(err.response.data);
-      setCurrentUser(null);
       setIslogin(false);
     })
   },[]);

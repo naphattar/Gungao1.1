@@ -22,6 +22,8 @@ function Chat(chatpropslist : Chatprops ) {
 
   const sendMessage = async () => {
     if (currentMessage !== "") {
+      const minites = new Date(Date.now()).getMinutes() < 10 ? "0"+new Date(Date.now()).getMinutes() : new Date(Date.now()).getMinutes();
+
       const messageData : Messagedata= {
         room: chatpropslist.roomid,
         author: chatpropslist.username,
@@ -29,7 +31,7 @@ function Chat(chatpropslist : Chatprops ) {
         time:
           new Date(Date.now()).getHours() +
           ":" +
-          new Date(Date.now()).getMinutes(),
+          minites,
       };
       await socket.emit("send_message", messageData);
       setMessageList((list) => [...list, messageData]);

@@ -9,27 +9,33 @@ import { Option } from '../../Interface';
 const options: Option[] = [
   {
     label: "Movies",
-    value: "movies"
+    value: "movies",
+    roomid : 1
   },
   {
     label: "Game",
-    value: "game"
+    value: "game",
+    roomid : 2
   },
   {
     label: "Animal",
-    value: "animal"
+    value: "animal",
+    roomid : 3
   },
   {
     label: "Guy2yo",
-    value: "guy2yo"
+    value: "guy2yo",
+    roomid : 4
   },
   {
     label: "Computer",
-    value: "computer"
+    value: "computer",
+    roomid : 5
   },
   {
     label : "Hee",
-    value : "hee"
+    value : "hee",
+    roomid : 6
   }
 ];
 
@@ -48,7 +54,7 @@ function Selectpage() {
             onChange={(selection: Option) => setSelectedItem(selection)}
           />
           <h4>You have Selected {selectedItem?.label}</h4>
-          <Selecttopicbutton/>
+          <Selecttopicbutton roomid={selectedItem?.roomid}/>
         </div>
       </div>
       

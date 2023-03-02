@@ -1,12 +1,29 @@
-import React from "react";
+import {ReactComponentElement,useEffect,useState} from "react";
 import { Link } from "react-router-dom";
 import "./Mainpage.css"
 
+interface Selecttopicbuttonprops{
+    roomid : number | undefined
+}
+function Selecttopicbutton(selecttopicbuttonprops : Selecttopicbuttonprops){
+    const [roomid,setRoomid] = useState<Number>(0);
 
-function Selecttopicbutton(){
+    useEffect(() : any =>{
+        if(selecttopicbuttonprops.roomid){
+            setRoomid(selecttopicbuttonprops.roomid);
+        }
+    });
+    if(roomid !== 0){
+        const chaturl : string = `/chat/${roomid}`;
+        return(
+            <button className="selecttopicbutton">
+            <Link to={chaturl} className="selecttopiclink">Find Your Chatmate!</Link>
+            </button>
+        );
+    }
     return(
         <button className="selecttopicbutton">
-            <Link to="/chat" className="selecttopiclink">Find Your Chatmate!</Link>
+            <Link to="/error" className="selecttopiclink">Find Your Chatmate!</Link>
         </button>
     );
 }

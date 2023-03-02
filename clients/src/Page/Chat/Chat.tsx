@@ -41,9 +41,6 @@ function Chat(chatpropslist : Chatprops ) {
   };
 
   useEffect(() : any => {
-    console.log(chatpropslist.socket);
-    console.log(chatpropslist.username);
-    console.log(chatpropslist.roomid);
     socket.on("recieve_message", (data) => {
       if(data.room === chatpropslist.roomid){
         setMessageList(
@@ -74,7 +71,7 @@ function Chat(chatpropslist : Chatprops ) {
                     <p>{msg.message}</p>
                   </div>
                   <div className="message-meta">
-                    <p>{msg.time}</p>
+                    <p>{msg.author}  {msg.time} </p>
                   </div>
                 </div>
               </div>

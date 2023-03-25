@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Chat.css";
 import { Socket } from "socket.io-client";
 import ScrollToBottom from 'react-scroll-to-bottom';
+
 interface Chatprops{
     socket: Socket,
     username : String,
@@ -14,6 +15,7 @@ interface Messagedata{
     message : String,
     time : String
 }
+
 function Chat(chatpropslist : Chatprops ) {
 
   const [currentMessage, setCurrentMessage] = useState("");

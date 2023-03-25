@@ -3,13 +3,13 @@ import AuthService from '../Services/Authservices';
 import Loginbutton from './Loginbutton';
 import "./Navbar.css"
 import Navitem from './Navitem';
-import { User } from '../Interface';
+import { User } from '../Interfaces/User';
 function Navbar() {
   const [isLogin,setIslogin] = useState(false);
 
   useEffect(()=>{
     AuthService.getCurrentUser()
-    .then((currentUser : any) =>{
+    .then((currentUser : User) =>{
       setIslogin(true);
     })
     .catch((err : any) =>{

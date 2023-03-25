@@ -3,7 +3,3 @@ export type Option = {
     value: string | number;
     roomid: number
 }
-
-export type User = {
-    username : string;
-}

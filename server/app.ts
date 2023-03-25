@@ -25,12 +25,17 @@ app.post("/register",Register);
 app.post("/login",Login);
 
 app.get("/current", verifyToken, async (req : getUserAuthInfoRequest, res : Response)  => {
-    let {_id,username} = req.user;
-    const user : User = await Users.findOne({ _id: { $eq: _id }});
-    res.status(201).send({
-        username : user.username,
-        token : user.token
-    });
+    try{
+
+        let {_id} = req.user;
+        const user : User = await Users.findOne({ _id: { $eq: _id }});
+        res.status(201).send({
+            username : user.username,
+            token : user.token
+        });
+    }catch(err){
+        console.log(err);
+    }
 });
 
   

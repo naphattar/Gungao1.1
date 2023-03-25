@@ -1,5 +1,5 @@
 import React from "react";
-import { Option } from '../../Interface';
+import { Option } from "../../Interfaces/Option";
 import { useState } from "react";
 import "./Select.css"
 

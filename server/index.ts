@@ -27,7 +27,6 @@ socketio.on("connection",(socket: { [x: string]: any; join(room: any): unknown; 
     });
     
     socket.on("send_message" ,(data: Messagedata) =>{
-        console.log(data);
         socket.to(data.room).emit("recieve_message" , data);
     });
     socket.on("disconnect",()=>{

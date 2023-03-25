@@ -97,5 +97,4 @@ export const verifyToken = (req : getUserAuthInfoRequest , res : Response , next
         console.log(err);
         res.status(401).send("Invalid Token");
     }
-    
 };

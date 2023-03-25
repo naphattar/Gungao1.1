@@ -4,7 +4,7 @@ import { InputActionMeta } from 'react-select/dist/declarations/src';
 import "./Mainpage.css"
 import Select from './Select';
 import Selecttopicbutton from './Selecttopicbutton';
-import { Option } from '../../Interface';
+import { Option } from '../../Interfaces/Option';
 
 const options: Option[] = [
   {

@@ -1,20 +1,33 @@
 .navbar{
-    background: #0D084E;
+    margin-top: 1rem;
     display: flex;
-    height: 2.8em;
+    height: 3rem;
     align-items: center;
     padding-left: 2.5rem;
     justify-content: space-around;
 }
 
 .navbrand{
-    color: #f0aa55;
-    font-size: 1.6rem;
-    font-weight: bold;
+   display: flex;
+   align-items: center;
+   gap : 1rem;
+   height: 100%;
 }
 
-.navbrand:hover{
-    color:#ee4956
+.navbrand img{
+    height: 100%;
+    background-color: #66FCF1;
+    cursor: pointer;
+}
+.navbrand p{
+    color: #66FCF1;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.navbrand p:hover{
+    cursor: pointer;
 }
 
 .navlist{
@@ -30,14 +43,14 @@
 }
 
 .navlink{
-    color: whitesmoke;
+    color: #66FCF1;
     text-decoration: none;
     font-size:1rem;
     font-weight: bold;
 }
 
 .navlink:hover{
-    color: #ee4956;
+    cursor: pointer;
 }
 
 .loginlink{
@@ -54,14 +67,47 @@
     border-radius: 0.6rem;
     margin-right: 0.4rem;
     margin-left: 0.4rem;
-    background-color: #bf7822;
+    background-color: #66FCF1;
    
 }
 
 .loginlink{
-    color: whitesmoke;
+    color: #1f2833;
 }
 
 .loginlink:hover{
-    color: #0D084E;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 992px) {
+    .togglebutton{
+        display: none;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .navbar{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .navbar ul{
+        display: none;
+    }
+
+    .loginbutton{
+        display: none;
+    }
+
+    .togglebutton{
+        height: 2.6rem;
+        width: 5.6rem;
+        align-items: center;
+        float: right;
+        border-radius: 1rem;
+        margin-right: 0.4rem;
+        margin-left: 0.4rem;
+        background-color: #66FCF1;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #1f2833;
+    }
 }

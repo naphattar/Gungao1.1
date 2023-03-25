@@ -1,9 +1,15 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import backgroundimage from "./assets/Homepagebackground.jpg";
 import "./Mainpage.css"
+
 function Homepage() {
-  const navigate = useNavigate();
+
+  const buttonScroll = () =>{
+    const element = document.getElementById("Selectpage");
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="homepagebody"  id="homepagebackground"
@@ -12,7 +18,7 @@ function Homepage() {
       <div className="homepagetextcontainer">
         <p>เหงาปาก เหงาใจ ไร้เพื่อนคุย</p>
         <p>ให้เราหา "เพื่อนคุย" ให้กับคุณ</p>
-        <button onClick={()=> {navigate("/register")}}>เข้าร่วมกับเรา</button>
+        <button onClick={buttonScroll}>ค้นหาเพื่อนคุยเลย</button>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
-import Homepage from "./Homepage";
-import Selectpage from "./Selectpage";
+import Homepage from "../Homepage/Homepage";
+import Selectpage from "../Selectpage/Selectpage";
 
 function Mainpage(){
     return(

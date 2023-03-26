@@ -1,7 +1,7 @@
 import React from "react";
 import { Option } from "../../Interfaces/Option";
 import { useState } from "react";
-import "./Select.css"
+import "./Select.css";
 
 interface SelectProps {
   placeholder?: string;

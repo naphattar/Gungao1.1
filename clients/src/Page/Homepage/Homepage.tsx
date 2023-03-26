@@ -1,6 +1,6 @@
 import React from 'react';
 import backgroundimage from "./assets/Homepagebackground.jpg";
-import "./Mainpage.css"
+import "../Mainpage/Mainpage.css";
 
 function Homepage() {
 

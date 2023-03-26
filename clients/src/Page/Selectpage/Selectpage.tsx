@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import { ActionMeta, GroupBase } from 'react-select';
-import { InputActionMeta } from 'react-select/dist/declarations/src';
-import "./Mainpage.css"
+import { useState } from 'react';
+import "../Mainpage/Mainpage.css";
 import Select from './Select';
 import Selecttopicbutton from './Selecttopicbutton';
 import { Option } from '../../Interfaces/Option';

@@ -2,6 +2,23 @@ import { Request, Response , NextFunction } from "express";
 import { Topic } from "../interface/Topic";
 const Topics = require("../model/topic");
 
+const getAlltopics = async() : Promise<Topic[]> =>{
+    try{
+        const topics : Topic[] = await Topics.find();
+        return topics;
+    }catch(err : any){
+        throw Error(err.response);
+    }
+};
+
+export const getTopics = async(req : Request , res : Response) : Promise<void> =>{
+    try{
+        const topics = await getAlltopics();
+        res.status(200).json(JSON.stringify(topics));
+    }catch(err : any){
+        res.status(500).send({message : err.response});
+    }
+};
 
 export const getTopicbyname = async (req : Request , res : Response) : Promise<void> =>{
     try{
@@ -23,8 +40,9 @@ export const getTopicbyname = async (req : Request , res : Response) : Promise<v
 
 export const addTopic = async(req : Request , res : Response): Promise<void>  =>{
     try{
+        const topics = await getAlltopics();
         const topicname = req.body.topicname;
-        const topicroomid = req.body.topicroomid;
+        const topicroomid = topics.length+1;
         if(!topicname || !topicroomid){
             res.status(401).send({message : "Input is invalid"});
             return;

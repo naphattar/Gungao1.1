@@ -1,7 +1,7 @@
 import { Route, Routes} from 'react-router-dom';
 import Navbar from './Navbar/Navbar';
 import Chatmain from './Page/Chat/Chatmain';
-import Mainpage from './Page/Homepage/Mainpage';
+import Mainpage from './Page/Mainpage/Mainpage';
 import Loginpage from './Page/Loginpage/Loginpage';
 import Registerpage from './Page/Loginpage/Registerpage';
 

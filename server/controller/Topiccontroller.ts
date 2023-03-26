@@ -27,7 +27,7 @@ export const getTopicbyname = async (req : Request , res : Response) : Promise<v
             res.status(401).send({message : "Topicname not valid"});
             return;
         }
-            const topic : Topic = await Topics.findOne({topicname});
+            const topic : Topic = await Topics.findOne({topicname : topicname});
             if(! topic){
                 res.status(401).send({message : "This topic not existed"});
                 return;
@@ -47,7 +47,7 @@ export const addTopic = async(req : Request , res : Response): Promise<void>  =>
             res.status(401).send({message : "Input is invalid"});
             return;
         }
-        const topic : Topic = await Topics.findOne({topicname});
+        const topic : Topic = await Topics.findOne({topicname : topicname});
         if(topic){
             res.status(400).send({message : "This topic already existed"});
             return;
@@ -60,5 +60,21 @@ export const addTopic = async(req : Request , res : Response): Promise<void>  =>
     }catch(err : any){
         res.status(500).send({message : err.response});
     }
+}
+
+export const increaseTopicused = async (req : Request , res : Response) =>{
+    const topicroomid = Number.parseInt(req.body.topicroomid);
+    if(!topicroomid){
+        res.status(401).send({message : "Topicname is not valid"});
+    }
+    try{
+        const topic : Topic = await Topics.findOne({topicroomid : topicroomid});
+        const totalused = topic.totalused;
+        await Topics.findOneAndUpdate({topicroomid : topicroomid},{totalused : totalused+1});
+        res.status(200).send({message : "updated success"});
+    }catch(err : any){
+        res.status(500).send({message : err.response});
+    }
+
 }
 

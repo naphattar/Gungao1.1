@@ -1,13 +1,13 @@
 import React from "react";
-import { Option } from "../../Interfaces/Option";
 import { useState } from "react";
 import "./Select.css";
+import { Topic } from "../../Types/Topic";
 
 interface SelectProps {
   placeholder?: string;
-  options: Option[];
-  selected: Option | null;
-  onChange: (selection: Option) => void;
+  options: Topic[];
+  selected: Topic| null;
+  onChange: (selection: Topic) => void;
 };
 
 const Select: React.FC<SelectProps> = ({ placeholder, selected, options, onChange }) => {
@@ -15,7 +15,7 @@ const Select: React.FC<SelectProps> = ({ placeholder, selected, options, onChang
     return (
         <div className="select-component" >
             <div onClick={() => setShowOptions(!showOptions)} className="select">
-                <span>{selected ? selected.label : placeholder}</span>
+                <span>{selected ? selected.topicname : placeholder}</span>
                 <span>v</span>
             </div>
             {showOptions && (
@@ -24,8 +24,8 @@ const Select: React.FC<SelectProps> = ({ placeholder, selected, options, onChang
                         <div onClick={() => {
                             onChange(option);
                             setShowOptions(false);
-                        }} key={option.value} className="option">
-                            <span>{option.label}</span>
+                        }} key={option.topicname} className="option">
+                            <span>{option.topicname}</span>
                         </div>
                     ))}
                 </div>

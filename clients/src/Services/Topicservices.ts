@@ -1,34 +1,22 @@
 import axios from "axios";
+import { Topic } from "../Types/Topic";
 const API_URL : string = "http://localhost:4000/topic/";
 
-const register = (username : string, password : string) => {
-    return axios.post(API_URL + "user/register", {
-      username,
-      password,
-    });
+
+const getsortedTopics = async () => {
+  try{
+    const response = await axios.get(API_URL)
+    if(response.data){
+      return response.data;
+    }
+
+  }catch(err : any){
+    throw Error(err.response);
+  }
 };
 
-const login = (username : string , password : string)=>{
-    return axios
-    .post(API_URL + "user/login", {
-      username,
-      password,
-    })
-    .then((response) => {
-      if(response.data.token){
-        localStorage.setItem("jwt",response.data.token);
-      }
-    });
+const TopicService= {
+    getsortedTopics
 }
-
-const logout = () =>{
-  localStorage.removeItem("jwt");
-}
-
-  const TopicService= {
-    register,
-    login,
-    logout
-  }
   
-  export default TopicService;
+export default TopicService;

@@ -14,7 +14,7 @@ const getAlltopics = async() : Promise<Topic[]> =>{
 export const getTopics = async(req : Request , res : Response) : Promise<void> =>{
     try{
         const topics = await getAlltopics();
-        res.status(200).json(JSON.stringify(topics));
+        res.status(200).json(topics);
     }catch(err : any){
         res.status(500).send({message : err.response});
     }
@@ -32,7 +32,7 @@ export const getTopicbyname = async (req : Request , res : Response) : Promise<v
                 res.status(401).send({message : "This topic not existed"});
                 return;
             }
-            res.status(200).json(JSON.stringify(topic));
+            res.status(200).json(topic);
     }catch(err : any){
         res.status(500).send({message : err.response});
     }

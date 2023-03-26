@@ -3,7 +3,7 @@ import AuthService from '../Services/Authservices';
 import Loginbutton from './Loginbutton';
 import "./Navbar.css"
 import Navitem from './Navitem';
-import { User } from '../Interfaces/User';
+import { User } from '../Types/User';
 import iconimage from "./assets/brandicon.png";
 import { useNavigate } from 'react-router-dom';
 

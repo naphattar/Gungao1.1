@@ -4,6 +4,7 @@ import Chatmain from './Page/Chat/Chatmain';
 import Mainpage from './Page/Mainpage/Mainpage';
 import Loginpage from './Page/Loginpage/Loginpage';
 import Registerpage from './Page/Loginpage/Registerpage';
+import Errorpage from './Page/Errorpage/Errorpage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/chat">
           <Route path=":roomID" element={<Chatmain/>}></Route>
         </Route>
+        <Route path="/error" element={<Errorpage/>}></Route>
       </Routes>
     </div>
   );

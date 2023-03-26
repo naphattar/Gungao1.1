@@ -79,35 +79,48 @@
     cursor: pointer;
 }
 
-@media only screen and (min-width: 992px) {
-    .togglebutton{
-        display: none;
-    }
-}
 @media only screen and (max-width: 992px) {
     .navbar{
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        border: solid 1px red;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0;
     }
-    .navbar ul{
-        display: none;
-    }
+    .navbrand{
+        display: flex;
+        align-items: center;
+        height: 50%;
+        margin-right: 0;
+     }
 
-    .loginbutton{
-        display: none;
+    .navbrand p{
+        font-size: 1rem;
     }
-
-    .togglebutton{
-        height: 2.6rem;
-        width: 5.6rem;
+    .navlist{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 1rem;
+        margin-right: 1rem;
+        margin-left: 0;
+    }
+    .navitem{
+        list-style-type: none;
+        display: block;
+        text-align: center;
+        margin-top: 50%;
+    }
+    
+    .navlink{
+        font-size:0.8rem;
+    }
+    .loginbutton {
+        height: 2rem;
+        width: 4rem;
         align-items: center;
         float: right;
-        border-radius: 1rem;
+        border-radius: 0.6rem;
         margin-right: 0.4rem;
         margin-left: 0.4rem;
-        background-color: #66FCF1;
-        font-size: 1rem;
-        font-weight: bold;
-        color: #1f2833;
     }
+
 }

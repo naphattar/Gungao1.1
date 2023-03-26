@@ -9,7 +9,6 @@ import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
   const [isLogin,setIslogin] = useState(false);
-  const [toggle,setToggle] = useState(false);
   const navigate = useNavigate();
 
   useEffect(()=>{
@@ -34,7 +33,6 @@ function Navbar() {
         <Navitem item={"About us"} tolink={"/aboutus"}></Navitem>
       </ul>
       <Loginbutton islogin={isLogin}/>
-      <button onClick={() => {setToggle(true)}} className="togglebutton">Open Menu</button>
     </nav>
   );
 }

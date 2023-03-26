@@ -5,6 +5,8 @@ import Mainpage from './Page/Mainpage/Mainpage';
 import Loginpage from './Page/Loginpage/Loginpage';
 import Registerpage from './Page/Loginpage/Registerpage';
 import Errorpage from './Page/Errorpage/Errorpage';
+import Howtousepage from './Page/Howtousepage/Howtousepage';
+import Aboutmepage from './Page/Aboutmepage/Aboutmepage';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path=":roomID" element={<Chatmain/>}></Route>
         </Route>
         <Route path="/error" element={<Errorpage/>}></Route>
+        <Route path="/howtouse" element={<Howtousepage/>}></Route>
+        <Route path="/aboutus" element={<Aboutmepage/>}></Route>
       </Routes>
     </div>
   );

@@ -1,10 +1,9 @@
 import mongoose , {mongo, Schema, Types} from "mongoose";
-import { User } from "./user";
 
 interface Topic{
     topicname : string;
     topicroomid : number;
-    topicroommember : Types.DocumentArray<User>;
+    totalused : number;
 }
 
 // Schema 
@@ -12,14 +11,7 @@ interface Topic{
 const topicSchema = new Schema<Topic>({
     topicname : {type : String , default : null},
     topicroomid : {type : Number , default : 0},
-    topicroommember : [
-        {
-            username: {type:String ,default : null},
-            password: {type: String , default : null},
-            highscore: {type: Number , default : 0},
-            token: {type: String}
-        }
-    ]
+    totalused : {type : Number , default : 0}
 });
 
 module.exports = mongoose.model('topics',topicSchema);

@@ -41,6 +41,8 @@
 
 .homepagetextcontainer button:hover{
     cursor: pointer;
+    color: #1f2833;
+    background-color: #66FCF1;
 }
 .selectpagebody{
     width: 60rem;
@@ -108,7 +110,6 @@
         background-repeat: no-repeat;
     }
     .homepagetextcontainer{
-        border: solid 1px red;
         padding-left: 2rem;
     }
     .homepagetextcontainer p{
@@ -116,7 +117,7 @@
     }
     .homepagetextcontainer button{
         height: 2rem;
-        width: 8rem;
+        width: 10rem;
         border-radius: 0.6rem;
         margin-right: 0.4rem;
         margin-left: 0.4rem;

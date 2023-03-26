@@ -5,6 +5,9 @@ const express = require("express");
 const cors = require("cors");
 const db = require("./database/database");
 const Users = require("./model/user");
+const userRouter = require("./routes/userrouter");
+//const topicRouter = require("./routes/topicrouter");
+
 
 db.connect();
 
@@ -21,8 +24,6 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.post("/register",Register);
-app.post("/login",Login);
 
 app.get("/current", verifyToken, async (req : getUserAuthInfoRequest, res : Response)  => {
     try{
@@ -38,7 +39,10 @@ app.get("/current", verifyToken, async (req : getUserAuthInfoRequest, res : Resp
     }
 });
 
-  
+app.use("/user",userRouter);
+//app.use("/topic",topicRouter);
+
+
 module.exports = app;
 
 

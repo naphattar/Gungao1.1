@@ -3,7 +3,7 @@ import { config } from "./Authconfig";
 const API_URL : string = "http://localhost:4000/";
 
 const register = (username : string, password : string) : any=> {
-    return axios.post(API_URL + "register", {
+    return axios.post(API_URL + "user/register", {
       username,
       password,
     });
@@ -11,7 +11,7 @@ const register = (username : string, password : string) : any=> {
 
 const login = (username : string , password : string) : any =>{
     return axios
-    .post(API_URL + "login", {
+    .post(API_URL + "user/login", {
       username,
       password,
     })

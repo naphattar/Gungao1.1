@@ -1,12 +1,12 @@
 import { NextFunction , Request , Response} from "express";
-import { getUserAuthInfoRequest, Login, Register, verifyToken } from "./controller/Authcontroller";
-import { User } from "./model/user";
+import { getUserAuthInfoRequest, verifyToken } from "./controller/Authcontroller";
+import { User } from "./interface/User";
 const express = require("express");
 const cors = require("cors");
 const db = require("./database/database");
 const Users = require("./model/user");
 const userRouter = require("./routes/userrouter");
-//const topicRouter = require("./routes/topicrouter");
+const topicRouter = require("./routes/topicrouter");
 
 
 db.connect();
@@ -40,7 +40,7 @@ app.get("/current", verifyToken, async (req : getUserAuthInfoRequest, res : Resp
 });
 
 app.use("/user",userRouter);
-//app.use("/topic",topicRouter);
+app.use("/topic",topicRouter);
 
 
 module.exports = app;

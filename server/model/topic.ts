@@ -1,10 +1,6 @@
 import mongoose , {mongo, Schema, Types} from "mongoose";
+import { Topic } from "../interface/Topic";
 
-interface Topic{
-    topicname : string;
-    topicroomid : number;
-    totalused : number;
-}
 
 // Schema 
 

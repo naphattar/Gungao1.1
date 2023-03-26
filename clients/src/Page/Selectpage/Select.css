@@ -8,6 +8,7 @@
 }
 
 .selectpagebody p{
+    text-shadow: 3px 2px 4px #45A29E;
     color: #66FCF1;
     font-size: 3rem;
     font-weight: bold;
@@ -16,6 +17,7 @@
 }
 
 .selectpagebody h4{
+    text-shadow: 3px 2px 4px #45A29E;
     color: #66FCF1;
     font-size: 1.5rem;
     font-weight: bold;

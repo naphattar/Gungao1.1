@@ -1,20 +1,15 @@
 import { Request, Response , NextFunction } from "express";
 import { Topic } from "../interface/Topic";
+import { getAlltopics, sortTopics } from "./TopicUtills";
+
 const Topics = require("../model/topic");
 
-const getAlltopics = async() : Promise<Topic[]> =>{
-    try{
-        const topics : Topic[] = await Topics.find();
-        return topics;
-    }catch(err : any){
-        throw Error(err.response);
-    }
-};
 
-export const getTopics = async(req : Request , res : Response) : Promise<void> =>{
+export const getsortedTopics = async(req : Request , res : Response) : Promise<void> =>{
     try{
         const topics = await getAlltopics();
-        res.status(200).json(topics);
+        const sortedtopics = sortTopics(topics);
+        res.status(200).json(sortedtopics);
     }catch(err : any){
         res.status(500).send({message : err.response});
     }
@@ -75,6 +70,5 @@ export const increaseTopicused = async (req : Request , res : Response) =>{
     }catch(err : any){
         res.status(500).send({message : err.response});
     }
-
 }
 

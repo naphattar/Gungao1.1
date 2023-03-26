@@ -44,62 +44,6 @@
     color: #1f2833;
     background-color: #66FCF1;
 }
-.selectpagebody{
-    width: 60rem;
-    height: 24rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.selectpagebody p{
-    color: #f0aa55;
-    font-size: 3rem;
-    font-weight: bold;
-    margin-top: 0.5rem;
-    margin-bottom: 0rem;
-}
-
-.selectpagebody h4{
-    color: #f0aa55;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-top: 0.5rem;
-    margin-bottom: 0rem;
-}
-
-.selectpageformcontainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    height: 32rem;
-    width: 100%;
-}
-
-.selecttopicbutton{
-    height: 3.6rem;
-    width: 12rem;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.8rem;
-    background-color: #bf7822;
-}
-
-.selecttopiclink{
-    font-size: 1rem;
-    color: whitesmoke;
-    list-style-type: none;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.selecttopiclink:hover{
-    color: #0D084E;
-    font-weight: bold;
-}
 
 @media only screen and (max-width: 992px) {
     .homepagebody{

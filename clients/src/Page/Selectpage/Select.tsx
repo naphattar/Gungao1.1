@@ -16,7 +16,7 @@ const Select: React.FC<SelectProps> = ({ placeholder, selected, options, onChang
         <div className="select-component" >
             <div onClick={() => setShowOptions(!showOptions)} className="select">
                 <span>{selected ? selected.topicname : placeholder}</span>
-                <span>v</span>
+                <span id="selectmark">v</span>
             </div>
             {showOptions && (
                 <div  className="options">

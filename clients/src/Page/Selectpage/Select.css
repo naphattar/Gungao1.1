@@ -1,3 +1,60 @@
+.selectpagebody{
+    width: 60rem;
+    height: 24rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.selectpagebody p{
+    color: #66FCF1;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    margin-bottom: 0rem;
+}
+
+.selectpagebody h4{
+    color: #66FCF1;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    margin-bottom: 0rem;
+}
+
+.selectpageformcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 32rem;
+    width: 100%;
+}
+
+.selecttopicbutton{
+    height: 3.6rem;
+    width: 12rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.8rem;
+    background-color: #45A29E;
+}
+
+.selecttopiclink{
+    font-size: 1rem;
+    color: whitesmoke;
+    list-style-type: none;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.selecttopiclink:hover{
+    color: #0D084E;
+    font-weight: bold;
+}
+
 .select-component {
     position: relative;
     background-color: whitesmoke;
@@ -9,13 +66,18 @@
     padding: 1rem 2rem;
     width: 30rem;
     cursor: pointer;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+#selectmark{
+    position: absolute;
+    right: 10%;
 }
 
 .select span {
     font-size: 1rem;
     font-weight: bold;
-    color: darkblue;
+    color: #1F2833;
     
 }
 
@@ -31,7 +93,10 @@
     width: 100%;
     border-bottom: none;
     font-size: 0.8rem;
+    font-weight: bold;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
 }
 
 .options .option:last-child {
@@ -40,4 +105,25 @@
 
 .options .option:first-child {
     border-top: none;
+}
+
+@media only screen and (max-width: 992px) {
+    .selectpagebody{
+        width: 20rem;
+    }
+    
+    .selectpagebody p{
+        font-size: 2rem;
+    }
+    
+    .selectpagebody h4{
+        font-size: 1rem;
+    }
+    .select {
+        width: 12rem;
+    }
+
+    .options {
+        width: 12rem;
+    }
 }

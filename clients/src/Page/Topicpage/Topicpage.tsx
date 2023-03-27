@@ -1,25 +1,24 @@
 import { useRef } from "react";
-import { Topicexamplecontainer,  TopicpagebodyLarge, TopicpagebodySmall, Topictextcontainer } from "./styles";
-import { mockTopics } from "./MockTopicExample";
-import TopicPresent from "./TopicPresent/TopicPresent";
-
+import { leftcontainer, rightcontainer, selectimage, topicpagebodyLarge, topicpagebodySmall } from "./styles";
+import "./style.css";
+import topicselecticon from "./assets/topicselecticon.png";
 function Topicpage(){
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
     const windowWidth = windowSize.current[0];
     return(
-        <div style={(windowWidth > 992) ? TopicpagebodyLarge : TopicpagebodySmall }>
-            <div style={Topictextcontainer}>
-                <h1>เพียงเลือกสิ่งที่คุณสนใจ</h1>
+        <div style={(windowWidth >= 992) ? topicpagebodyLarge : topicpagebodySmall}>
+            <div style={leftcontainer}>
+                <h1>เพียงเลือกหัวข้อที่สนใจ</h1>
             </div>
-            <div style={Topicexamplecontainer}>
-                {mockTopics.map((topic) =>{
-                    return(
-                        <TopicPresent data={topic}/>
-                    )
-                })}
+
+            <div style={rightcontainer}> 
+                <span id="dot">
+                    <img style={selectimage}src={topicselecticon}></img>
+                </span>
+                
             </div>
         </div>
-    )
-};
+    );
+}
 
 export default Topicpage;

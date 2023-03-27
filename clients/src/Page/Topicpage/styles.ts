@@ -4,38 +4,38 @@ export const TopicpagebodyLarge : CSS.Properties ={
     border : "solid 1px red",
     height : "50rem",
     display : "flex",
-    marginTop : "1rem"
+    flexDirection : "column",
+    marginTop : "1rem",
 };
 
-export const Topicpagebodysmall : CSS.Properties ={
+export const TopicpagebodySmall : CSS.Properties ={
     border : "solid 1px red",
     height : "25rem",
     display : "flex",
+    flexDirection : "column",
     marginTop : "1rem"
 };
 
 export const Topictextcontainer : CSS.Properties ={
-    width : "40%",
     color : "whitesmoke",
+    fontSize : "70%",
     border : "solid 1px red",
     marginLeft : "6%",
-    marginRight : "3%",
+    marginRight : "6%",
     marginTop : "4%",
-    marginBottom : "4%",
+    marginBottom : "2%",
     display : "flex",
-    justifyContent : "center",
     alignItems : "center",
+    justifyContent : "center"
 };
 
-export const Topicimagecontainer : CSS.Properties ={
-    width : "60%",
+export const Topicexamplecontainer : CSS.Properties ={
+    height : "80%",
     color : "whitesmoke",
     border : "solid 1px red",
     marginLeft : "3%",
-    marginRight : "6%",
-    marginTop : "4%",
-    marginBottom : "4%",
-    display : "flex",
-    justifyContent : "center",
-    alignItems : "center"
+    marginRight : "3%",
+    marginBottom : "2%",
+    display : "grid",
+    gridTemplateColumns : "1fr 1fr"
 }

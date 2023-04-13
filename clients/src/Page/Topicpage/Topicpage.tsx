@@ -1,21 +1,32 @@
-import { useRef } from "react";
-import { leftcontainer, rightcontainer, selectimage, topicpagebodyLarge, topicpagebodySmall } from "./styles";
-import "./style.css";
-import topicselecticon from "./assets/topicselecticon.png";
+import React, { useRef } from "react";
+import { textcontainer, textstyleLarge, textstyleSmall, topicpagebodyLarge, topicpagebodySmall, topicscontainer } from "./styles";
+import Topicpresent from "./components/Topicpresent";
+import mountainImage from "./components/assets/mountain.jpg";
+import dinosaurImage from "./components/assets/dinosaur.jpg";
+import foodImage from "./components/assets/food.jpg";
+
 function Topicpage(){
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
     const windowWidth = windowSize.current[0];
     return(
         <div style={(windowWidth >= 992) ? topicpagebodyLarge : topicpagebodySmall}>
-            <div style={leftcontainer}>
-                <h1>เพียงเลือกหัวข้อที่สนใจ</h1>
+            <div style={textcontainer}>
+                <h2  style={windowWidth >= 992 ? textstyleLarge : textstyleSmall}>เลือกหัวข้อที่น่าสนใจ</h2>
+                <h1 style={windowWidth >= 992 ? textstyleLarge : textstyleSmall}>เเล้วมองหาคนที่สนใจเหมือนคุณเลย</h1>
             </div>
-
-            <div style={rightcontainer}> 
-                <span id="dot">
-                    <img style={selectimage}src={topicselecticon}></img>
-                </span>
-                
+            <div style={topicscontainer}>
+                <Topicpresent 
+                imageurl={mountainImage}
+                topic="การท่องเที่ยว"
+                />
+                <Topicpresent 
+                imageurl={dinosaurImage}
+                topic="ไดโนเสาร์"
+                />
+                <Topicpresent 
+                imageurl={foodImage}
+                topic="อาหาร"
+                />
             </div>
         </div>
     );

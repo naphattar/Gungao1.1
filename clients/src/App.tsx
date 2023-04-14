@@ -6,7 +6,7 @@ import Loginpage from './Page/Loginpage/Loginpage';
 import Registerpage from './Page/Loginpage/Registerpage';
 import Errorpage from './Page/Errorpage/Errorpage';
 import Howtousepage from './Page/Howtousepage/Howtousepage';
-import Aboutmepage from './Page/Aboutmepage/Aboutmepage';
+import Addtopicpage from './Page/Addtopicpage/Aboutmepage';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         </Route>
         <Route path="/error" element={<Errorpage/>}></Route>
         <Route path="/howtouse" element={<Howtousepage/>}></Route>
-        <Route path="/aboutus" element={<Aboutmepage/>}></Route>
+        <Route path="/addtopic" element={<Addtopicpage/>}></Route>
       </Routes>
     </div>
   );

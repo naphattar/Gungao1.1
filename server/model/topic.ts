@@ -7,7 +7,8 @@ import { Topic } from "../interface/Topic";
 const topicSchema = new Schema<Topic>({
     topicname : {type : String , default : null},
     topicroomid : {type : Number , default : 0},
-    totalused : {type : Number , default : 0}
+    totalused : {type : Number , default : 0},
+    imageurl : {type : String , default : null},
 });
 
 module.exports = mongoose.model('topics',topicSchema);

@@ -1,6 +1,6 @@
 import CSS from 'csstype';
 
-export const aboutpagebody : CSS.Properties = {
+export const addtopicpagebody : CSS.Properties = {
     marginTop : "2rem",
     height : "max-content",
     display: "flex",

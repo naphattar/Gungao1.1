@@ -30,7 +30,7 @@ function Navbar() {
       <ul className="navlist">
         <Navitem item={"Home"} tolink={"/"}></Navitem>
         <Navitem item={"How to use"} tolink={"/howtouse"}></Navitem>
-        <Navitem item={"About us"} tolink={"/aboutus"}></Navitem>
+        <Navitem item={"Add Your Topic"} tolink={"/addtopic"}></Navitem>
       </ul>
       <Loginbutton islogin={isLogin}/>
     </nav>

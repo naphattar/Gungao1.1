@@ -37,6 +37,7 @@ export const addTopic = async(req : Request , res : Response): Promise<void>  =>
     try{
         const topics = await getAlltopics();
         const topicname = req.body.topicname;
+        const topicimageurl = req.body.imageurl;
         const topicroomid = topics.length+1;
         if(!topicname || !topicroomid){
             res.status(401).send({message : "Input is invalid"});
@@ -50,6 +51,7 @@ export const addTopic = async(req : Request , res : Response): Promise<void>  =>
         const newTopic : Topic = await Topics.create({
             topicname : topicname,
             topicroomid : topicroomid,
+            imageurl : topicimageurl,
         })
         res.status(200).send({message : "Topic created"});
     }catch(err : any){

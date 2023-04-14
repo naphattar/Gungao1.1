@@ -1,20 +1,32 @@
 
-import { useRef } from "react";
+import { useRef} from "react";
 import { buttonstyleLarge,buttonstyleSmall,imagecontainer, imagestyle, topicbackgroundLarge } from "./styles";
+import { Topicselectservice } from "../../../Services/Topicselectservice";
 
 interface Topicpresentprops{
     imageurl : string,
     topic : string,
+    roomid : number,
 }
-function Topicpresent(props : Topicpresentprops){
+function Topicpresent(this: any, props : Topicpresentprops){
     const windowSize = useRef([window.innerWidth, window.innerHeight]);
     const windowWidth = windowSize.current[0];
+
+    const onMouseoverHandler = () =>{
+      const button = document.getElementById(`button${props.roomid}`);
+      if(button){
+        button.style.cursor = "pointer";
+      }
+    }
+    const SelecttopicbuttonHandler = ()=>{
+      Topicselectservice.findChat(props.roomid);
+    }
     return(
       <div style={topicbackgroundLarge}>
         <div style={imagecontainer}>
             <img src={props.imageurl} style={imagestyle}></img>
         </div>
-        <button style={windowWidth >= 992 ? buttonstyleLarge : buttonstyleSmall}>{props.topic}</button>
+        <button id={`button${props.roomid}`} style={windowWidth >= 992 ? buttonstyleLarge : buttonstyleSmall} onClick={SelecttopicbuttonHandler} onMouseOver={onMouseoverHandler}>{props.topic}</button>
       </div>  
     );
 }

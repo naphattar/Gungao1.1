@@ -32,7 +32,7 @@ export const topicscontainer : CSS.Properties = {
     marginBottom : "1rem",
     display : "flex",
     alignItems : "center",
-    justifyContent : "space-around"
+    justifyContent : "space-around",
 }
 
 export const textstyleLarge : CSS.Properties = {

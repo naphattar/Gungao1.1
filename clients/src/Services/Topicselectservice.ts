@@ -13,13 +13,11 @@ const increaseTopic = async (roomid : number) =>{
 const findChat = (roomid : number) =>{
     
     if(roomid !== 0){
-        const chaturl : string = `/chat/${roomid}`;
+        const chaturl : string = `chat/${roomid}`;
         increaseTopic(roomid);
         navigate(chaturl);
-        window.location.reload();
     }else{
-        navigate("/error");
-        window.location.reload();
+        navigate("error");
     }
 };
 

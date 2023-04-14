@@ -18,14 +18,17 @@ function Topicpage(){
                 <Topicpresent 
                 imageurl={mountainImage}
                 topic="การท่องเที่ยว"
+                roomid={10}
                 />
                 <Topicpresent 
                 imageurl={dinosaurImage}
                 topic="ไดโนเสาร์"
+                roomid={4}
                 />
                 <Topicpresent 
                 imageurl={foodImage}
                 topic="อาหาร"
+                roomid={11}
                 />
             </div>
         </div>

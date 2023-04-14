@@ -25,7 +25,7 @@ export const imagestyle : CSS.Properties = {
 
 export const buttonstyleLarge : CSS.Properties = {
     marginTop : "2rem",
-    backgroundColor: "#45A29E",
+    backgroundColor: "rgb(2,0,36)",
     fontWeight: "bold",
     fontSize: "1rem",
     color: "whitesmoke",
@@ -37,7 +37,7 @@ export const buttonstyleLarge : CSS.Properties = {
 
 export const buttonstyleSmall : CSS.Properties = {
     marginTop : "1rem",
-    backgroundColor: "#45A29E",
+    backgroundColor: "rgb(2,0,36)",
     fontWeight: "bold",
     fontSize: "0.5rem",
     color: "whitesmoke",
@@ -46,5 +46,6 @@ export const buttonstyleSmall : CSS.Properties = {
     borderRadius: "1rem",
     transition: "background-color 0.5s ease-in-out",
 };
+
   
 

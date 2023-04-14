@@ -16,7 +16,7 @@
 
 .signincontainer{
     width: 36rem;
-    background-color: rgb(90, 88, 237);
+    background: #45A29E;
     border-radius: 4rem;
     height: 30rem;
     display: flex;
@@ -27,7 +27,7 @@
 }
 
 .signincontainer h1{
-    color: whitesmoke;
+    color: rgb(2,0,36);
     font-weight: bold;
 }
 
@@ -51,12 +51,9 @@
 
 .signinform a{
     text-decoration: none;
-    color: whitesmoke;
+    color: rgb(2,0,36);
 }
 
-.signinform a:hover{
-    color: #fb8992;
-}
 
 .signinform button{
     width: 10rem;
@@ -73,7 +70,7 @@
 
 .signupcontainer{
     width: 36rem;
-    background-color: rgb(137, 33, 144);
+    background-color: #45A29E;
     border-radius: 4rem;
     height: 30rem;
     display: flex;
@@ -84,6 +81,6 @@
 }
 
 .signupcontainer h1{
-    color: whitesmoke;
+    color: rgb(2,0,36);
     font-weight: bold;
 }

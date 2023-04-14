@@ -14,7 +14,6 @@ export const topicpagebodySmall : CSS.Properties = {
     display : "flex",
     alignItems : "center",
     justifyContent : "center",
-    border : "solid red 1px",
     flexDirection : "column",
 };
 

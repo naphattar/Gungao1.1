@@ -6,7 +6,7 @@ import Loginpage from './Page/Loginpage/Loginpage';
 import Registerpage from './Page/Loginpage/Registerpage';
 import Errorpage from './Page/Errorpage/Errorpage';
 import Howtousepage from './Page/Howtousepage/Howtousepage';
-import Addtopicpage from './Page/Addtopicpage/Aboutmepage';
+import Addtopicpage from './Page/Addtopicpage/AddTopicpage';
 
 function App() {
   return (

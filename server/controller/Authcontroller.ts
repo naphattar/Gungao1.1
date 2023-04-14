@@ -40,7 +40,9 @@ export const Register = async(req : Request , res : Response) : Promise<any> =>{
         )
         
         newUser.token = token;
-        res.header("authtoken", token).status(201);
+        res.header("authtoken", token).status(201).send({
+            message : "Register success",
+        });
 
     }catch(err){
         console.log(err);

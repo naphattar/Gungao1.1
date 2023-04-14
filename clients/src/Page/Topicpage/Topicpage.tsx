@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { textcontainer, textstyleLarge, textstyleSmall, topicpagebodyLarge, topicpagebodySmall, topicscontainer } from "./styles";
+import { textcontainer, textstyleLarge, textstyleSmall, topicpagebodyLarge, topicpagebodySmall, topicscontainerLarge, topicscontainerSmall } from "./styles";
 import Topicpresent from "./components/Topicpresent";
 import mountainImage from "./components/assets/mountain.jpg";
 import dinosaurImage from "./components/assets/dinosaur.jpg";
@@ -14,7 +14,52 @@ function Topicpage(){
                 <h2  style={windowWidth >= 992 ? textstyleLarge : textstyleSmall}>เลือกหัวข้อที่น่าสนใจ</h2>
                 <h1 style={windowWidth >= 992 ? textstyleLarge : textstyleSmall}>เเล้วมองหาคนที่สนใจเหมือนคุณเลย</h1>
             </div>
-            <div style={topicscontainer}>
+            <div style={windowWidth >= 992 ? topicscontainerLarge : topicscontainerSmall}>
+                <Topicpresent 
+                imageurl={mountainImage}
+                topic="การท่องเที่ยว"
+                roomid={10}
+                />
+                <Topicpresent 
+                imageurl={dinosaurImage}
+                topic="ไดโนเสาร์"
+                roomid={4}
+                />
+                <Topicpresent 
+                imageurl={foodImage}
+                topic="อาหาร"
+                roomid={11}
+                />
+                <Topicpresent 
+                imageurl={mountainImage}
+                topic="การท่องเที่ยว"
+                roomid={10}
+                />
+                <Topicpresent 
+                imageurl={dinosaurImage}
+                topic="ไดโนเสาร์"
+                roomid={4}
+                />
+                <Topicpresent 
+                imageurl={foodImage}
+                topic="อาหาร"
+                roomid={11}
+                />
+                <Topicpresent 
+                imageurl={mountainImage}
+                topic="การท่องเที่ยว"
+                roomid={10}
+                />
+                <Topicpresent 
+                imageurl={dinosaurImage}
+                topic="ไดโนเสาร์"
+                roomid={4}
+                />
+                <Topicpresent 
+                imageurl={foodImage}
+                topic="อาหาร"
+                roomid={11}
+                />
                 <Topicpresent 
                 imageurl={mountainImage}
                 topic="การท่องเที่ยว"

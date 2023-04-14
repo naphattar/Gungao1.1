@@ -1,7 +1,7 @@
 import CSS from 'csstype';
 
 export const topicpagebodyLarge : CSS.Properties = {
-    height : "50rem",
+    height : "auto",
     display : "flex",
     alignItems : "center",
     flexDirection : "column",
@@ -10,9 +10,10 @@ export const topicpagebodyLarge : CSS.Properties = {
 };
 
 export const topicpagebodySmall : CSS.Properties = {
-    height : "25rem",
+    height : "auto",
     display : "flex",
     alignItems : "center",
+    justifyContent : "center",
     border : "solid red 1px",
     flexDirection : "column",
 };
@@ -24,15 +25,27 @@ export const textcontainer : CSS.Properties = {
     marginTop : "1rem",
     alignItems : "center",
     marginLeft : "12%",
+    marginBottom : "1rem",
 }
 
-export const topicscontainer : CSS.Properties = {
+export const topicscontainerLarge : CSS.Properties = {
     width : "90%",
     height : "80%",
     marginBottom : "1rem",
-    display : "flex",
+    display : "grid",
     alignItems : "center",
-    justifyContent : "space-around",
+    gridTemplateColumns : "1fr 1fr 1fr",
+    columnGap : "1rem",
+}
+
+export const topicscontainerSmall: CSS.Properties = {
+    width : "90%",
+    height : "80%",
+    marginBottom : "1rem",
+    display : "grid",
+    alignItems : "center",
+    gridTemplateColumns : "1fr 1fr",
+    columnGap : "1rem",
 }
 
 export const textstyleLarge : CSS.Properties = {

@@ -1,14 +1,33 @@
 import CSS from 'csstype';
 
 export const topicbackgroundLarge : CSS.Properties = {
+    alignSelf : "center",
+    justifySelf : "center",
     border : "solid whitesmoke 1px",
     backgroundColor : "whitesmoke",
-    width : "28%",
-    height : "68%",
+    width : "22rem",
+    height : "24rem",
     borderRadius : "1rem",
     display : "flex",
     flexDirection : "column",
     alignItems : "center",
+    marginTop : "1rem",
+    marginBottom : "1rem",
+};
+
+export const topicbackgroundSmall: CSS.Properties = {
+    alignSelf : "center",
+    justifySelf : "center",
+    border : "solid whitesmoke 1px",
+    backgroundColor : "whitesmoke",
+    width : "10rem",
+    height : "10rem",
+    borderRadius : "1rem",
+    display : "flex",
+    flexDirection : "column",
+    alignItems : "center",
+    marginTop : "1rem",
+    marginBottom : "1rem",
 };
 
 export const imagecontainer : CSS.Properties = {

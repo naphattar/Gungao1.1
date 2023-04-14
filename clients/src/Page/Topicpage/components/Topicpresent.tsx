@@ -1,6 +1,6 @@
 
 import { useRef} from "react";
-import { buttonstyleLarge,buttonstyleSmall,imagecontainer, imagestyle, topicbackgroundLarge } from "./styles";
+import { buttonstyleLarge,buttonstyleSmall,imagecontainer, imagestyle, topicbackgroundLarge, topicbackgroundSmall } from "./styles";
 import { Topicselectservice } from "../../../Services/Topicselectservice";
 
 interface Topicpresentprops{
@@ -22,7 +22,7 @@ function Topicpresent(this: any, props : Topicpresentprops){
       Topicselectservice.findChat(props.roomid);
     }
     return(
-      <div style={topicbackgroundLarge}>
+      <div style={windowWidth >= 992 ? topicbackgroundLarge : topicbackgroundSmall}>
         <div style={imagecontainer}>
             <img src={props.imageurl} style={imagestyle}></img>
         </div>
